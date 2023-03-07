@@ -1,0 +1,401 @@
+// Import Bulma's core
+@import "~bulma/sass/utilities/_all";
+
+// Set your colors
+$scheme-main: #fff;
+$primary: #167df0;
+$primary-invert: findColorInvert($primary);
+$twitter: #4099FF;
+$twitter-invert: findColorInvert($twitter);
+
+// Setup $colors to use as bulma classes (e.g. 'is-twitter')
+$colors: (
+    "white": ($white, $black),
+    "black": ($black, $white),
+    "light": ($light, $light-invert),
+    "dark": ($dark, $dark-invert),
+    "primary": ($primary, $primary-invert),
+    "info": ($info, $info-invert),
+    "success": ($success, $success-invert),
+    "warning": ($warning, $warning-invert),
+    "danger": ($danger, $danger-invert),
+    "twitter": ($twitter, $twitter-invert)
+);
+.change-avatar {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 5px calc(50% - 100px);
+  border-radius: 99999px;
+}
+.hidden-file-input {
+  display:none;
+}
+.change-avatar-overlay {
+  height: 190px;
+  padding: 5px;
+  border-radius: 99999px;
+  width: 190px;
+  position: absolute;
+  top: 5px; left: calc(50% - 95px);
+  background-color: rgba(0,0,0,0);
+  color: rgba(255,255,255,0);
+  font-size: 2rem;
+  line-height: 190px;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+}
+.change-avatar:hover > .change-avatar-overlay {
+  background-color: rgba(0,0,0,.4);
+  color: rgba(255,255,255,1);
+  transition: all .5s ease-in-out;
+}
+// Links
+$link: $primary;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;
+
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+
+.has-icon-left textarea {
+    padding-left: 2.25em; resize:none;
+}
+footer {
+  overflow: hidden !important;
+}
+.has-icon-left textarea:focus ~ .icon {
+    color: #7a7a7a;
+}
+.button {
+    > span {
+      &:empty {
+        display: none;
+  
+        + span {
+          margin-left: -.5rem!important;
+        }
+      }
+    }
+  }
+.is-shady {
+    -webkit-animation: flyintoright 0.4s backwards;
+            animation: flyintoright 0.4s backwards;
+    background: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 1px 0;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 10px;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    width: -webkit-fill-available;
+  }
+  .fixed-shady {
+    -webkit-animation: flyintoright 0.4s backwards;
+    animation: flyintoright 0.4s backwards;
+    background: #fff;
+    box-shadow: 0 10px 16px rgba(0, 0, 0, 0.13), 0 6px 6px rgba(0, 0, 0, 0.19);
+    border-radius: 4px;
+    display: inline-block;
+    margin: 10px;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    width: -webkit-fill-available;
+  }
+  .user-block {
+    margin-top: 5rem;
+  }
+  .is-shady:hover {
+    box-shadow: 0 10px 16px rgba(0, 0, 0, 0.13), 0 6px 6px rgba(0, 0, 0, 0.19);
+  }
+  .user-block .avatar {
+    margin-top: -70px;
+  }
+  .empty-label > label {
+      color: rgba(0,0,0,0) !important;
+  }
+  .user-block .avatar img {
+    padding: 5px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  }
+.has-background-image {
+    background-color: rgba(0, 0, 0, 0) !important;
+    box-shadow: inset 0 0 0 100vmax rgba(50, 152, 220, 0.5);
+    background-image: url(~assets/images/bg.jpg);
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff !important;
+    padding: 10rem 0;
+    overflow: hidden;
+    position: relative;
+}
+
+$logo-blue: rgb(50,152,220);
+
+.navbar-brand {
+  width: 100%;
+}
+
+.navbar-burger {
+  display: none !important;
+  color: #3298dc;
+}
+
+.show-always {
+  display: block !important;
+}
+
+.navbar-brand > a,
+.navbar-brand > a:focus,
+.navbar-brand > a:active,
+.navbar-brand > a:visited,
+.navbar-brand > a:hover {
+    color: $logo-blue;
+}
+
+.navbar-brand img {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 15px;
+}
+
+.navbar-brand > a {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+footer {
+    padding: 3rem 0;
+}
+
+.divider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: #7a7a7a;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin: 25px 0;
+}
+.divider::after, .divider::before {
+    content: "";
+    display: block;
+    flex: 1;
+    height: 1px;
+    background-color: #3298dc;
+}
+.divider:not(.is-empty)::before {
+    margin-right: 10px;
+}
+.divider:not(.is-empty)::after {
+    margin-left: 10px;
+}
+
+.my-half {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+.dlt-btn {
+    position: absolute;
+    z-index: 2;
+    top: -10px;
+    right: -10px;
+}
+
+.is-sticky-column-two {
+    background: #167df0!important;
+    color: #fff!important;
+}
+
+.avatar img {
+    border: 2px solid $primary;
+    padding: 5px;
+    border-radius: 50%;
+    width: 200px;
+}
+
+.nuxt-link-exact-active {
+    color: #167df0;
+}
+
+.mt-5 {
+    margin-top: 5rem;
+}
+@for $i from 1 through 10 {
+  .has-margin-left-#{$i} {
+    padding-left: 2rem * $i;
+  }
+}
+.avatar-mini {
+    width: 2rem;
+    max-height: 2rem !important;
+    margin-right: 10px;
+    border-radius: 50%;
+    border: 1px solid $primary;
+}
+.creator {
+    width: 5rem;
+    height: 5rem;
+    margin-right: 10px;
+    border-radius: 10px;
+    float: left;
+}
+.stack-top {
+    /* adjust the below to control the shape */
+    --d:5px; 
+    --g:16px;
+    --c:#167df0;
+    /**/
+  
+    position: absolute;
+    text-transform: uppercase;
+    font-weight: bold;
+    top: 0;
+    right: 0;
+    transform: translate(29.29%, -100%) rotate(45deg); /* 29.29% = 100%*(1 - cos(45deg)) */
+    color: #fff;
+    text-align: center;
+    width: 200px;
+    z-index: 3;
+    transform-origin: bottom left;
+    padding:5px 0 calc(var(--d) + 5px);
+    background:
+      linear-gradient(135deg, transparent var(--g), var(--c) calc(var(--g) - 0.3px)) left,
+      linear-gradient(-135deg,transparent var(--g), var(--c) calc(var(--g) - 0.3px)) right;
+    background-size:51% 100%;
+    background-repeat:no-repeat;
+    clip-path:polygon(0 0,100% 0,100% 100%, calc(100% - var(--d)) calc(100% - var(--d)), var(--d) calc(100% - var(--d)),0 100%)
+}
+
+.stack-top.left {
+    left:0;
+    right:auto;
+    transform: translate(-29.29%, -100%) rotate(-45deg);
+    transform-origin: bottom right;
+  }
+
+.smt5 {
+  margin-top: 5rem;
+}
+.mobile-nav {
+  display: none;
+}
+.dialog.modal>.modal-card {
+  max-width: 1200px;
+}
+
+.sidebar-content.is-fixed.is-fullheight.is-right {
+  background-color: #fff;
+  box-shadow: none;
+  width: 350px;
+}
+
+.resized {
+  margin-right:350px !important;
+  transition: all .2s linear;
+}
+
+.base {
+  transition: all .2s linear;
+}
+
+.resized > .navbar {
+  padding-right: calc(2rem + 350px);
+  transition: all .2s linear;
+}
+
+.navbar {
+  transition: all .2s linear;
+}
+
+.sidebar-container {
+  padding: 15px;
+  -webkit-box-shadow: inset 5px 0px 31px -13px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 5px 0px 31px -13px rgba(0,0,0,0.75);
+  box-shadow: inset 5px 0px 31px -13px rgba(0,0,0,0.75);
+  min-height: 100%;
+  height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: rgba(245, 245, 245, 0);
+}
+
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #43485c;
+}
+body {
+  background: #EFF3F4;
+  min-height: 100vh;
+}
+.section.is-grey {
+  background: #fafafa;
+}
+.close-sidebar {
+  display: none;
+}
+@media only screen and (max-width: 1024px) {
+  footer {
+    padding: 10px;
+    text-align: center;
+  }
+  .gg {
+    margin-top: 0 !important;
+  }
+  .footer-description {
+    margin-top: 1rem;
+  }
+  .navbar-menu {
+    text-align: center;
+  }
+  .non-mobile {
+    display: none;
+  }
+  .mobile-nav {
+    display: block;
+  }
+  .navbar-menu.is-active {
+    height: calc(100vh - 3.25rem) !important
+  }
+  .columns {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .resized .column {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .column {
+    width: 100%;
+  }
+  .resized {
+    margin: 0;
+  }
+  .resized > .navbar {
+    padding: 0;
+  }
+  .sidebar-content.is-fixed.is-fullheight.is-right {
+    width: 100%;
+  }
+  .close-sidebar {
+    display: initial;
+  }
+  #ss {
+    display:none;
+  }
+}
+
